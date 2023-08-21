@@ -18,11 +18,16 @@ def calc_pi():
     π ≈ (a[n+1] + b[n+1]) ** 2 / (4 * t[n+1])
 
     """
+    while True:
+        try:
+            num = int(input('Enter the number of decimal places (1 - 1000) you want the value of pi: ' ))
+            if num <= 0 or num > 1000:
+                print('Invalid num. Please enter a number between 1 and 1000')
+            else:
+                break
+        except ValueError:
+            print('Invalid input, please enter a valid number')
 
-    num = int(input('Enter the number of decimal places (1 - 1000) you want the value of pi: ' ))
-    if num <= 0 or num >= 1000:
-        return 'Invalid num. Please enter a number between 1 and 1000'
-    
     getcontext().prec = num + 2   # Set the precision of the final value of pi
     
     a = Decimal(1)
