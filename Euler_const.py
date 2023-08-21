@@ -1,7 +1,11 @@
 from decimal import Decimal, getcontext
 
 def calc_euler_const():
-    
+    """
+    A function that calculates the euler's constant value
+    Using the Taylor series expansion of the exponential function. 
+            
+    """    
     while True:
         try:
             num = int(input('Enter the number of decimal places (1 - 1000) you want the value of e: ' ))
